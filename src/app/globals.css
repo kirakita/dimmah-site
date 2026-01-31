@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  --font-dm: "DM Sans", sans-serif;
+  
+  /* Premium color palette */
+  --color-primary: #1C1917;
+  --color-secondary: #44403C;
+  --color-accent: #CA8A04;
+  --color-accent-hover: #A16207;
+  --color-bg: #FAFAF9;
+  --color-bg-secondary: #F5F5F4;
+  --color-text: #0C0A09;
+  --color-text-muted: #57534E;
+  --color-border: #E7E5E4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: var(--font-dm);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Selection */
+::selection {
+  background: var(--color-accent);
+  color: white;
+}
+
+/* Smooth hover transitions */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Glass card effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(231, 229, 228, 0.8);
+}
+
+/* Gold gradient text */
+.gold-text {
+  background: linear-gradient(135deg, #CA8A04 0%, #EAB308 50%, #CA8A04 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtle grid background */
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(28, 25, 23, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(28, 25, 23, 0.02) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Custom scrollbar (subtle) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
